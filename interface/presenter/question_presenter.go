@@ -14,8 +14,5 @@ func NewQuestionPresenter() QuestionPresenter {
 }
 
 func (up *questionPresenter) ResponseQuestions(us []*model.Question) []*model.Question {
-	for _, u := range us {
-		u.Name = "Mr." + u.Name
-	}
 	return us
 }

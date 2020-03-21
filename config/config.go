@@ -13,7 +13,7 @@ import (
 
 type config struct {
 	Database struct {
-		Question             string
+		User                 string
 		Password             string
 		Net                  string
 		Addr                 string
