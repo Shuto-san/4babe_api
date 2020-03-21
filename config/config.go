@@ -23,6 +23,10 @@ type config struct {
 			ParseTime string
 		}
 	}
+	Redis struct {
+		Net  string
+		Addr string
+	}
 	Server struct {
 		Address string
 	}

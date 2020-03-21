@@ -5,6 +5,7 @@ import (
 	"log"
 
 	"github.com/gin-gonic/gin"
+	_ "github.com/gomodule/redigo/redis"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 
 	"github.com/Shuto-san/4babe_api/config"
@@ -20,7 +21,10 @@ func main() {
 	db.LogMode(true)
 	defer db.Close()
 
-	r := registry.NewRegistry(db)
+	kvs := datastore.NewKVS()
+	defer kvs.Close()
+
+	r := registry.NewRegistry(db, kvs)
 
 	gin := gin.New()
 	gin = router.NewRouter(gin, r.NewAppController())

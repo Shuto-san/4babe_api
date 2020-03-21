@@ -18,7 +18,7 @@ func (r *registry) NewQuestionInteractor() interactor.QuestionInteractor {
 }
 
 func (r *registry) NewQuestionRepository() ur.QuestionRepository {
-	return ir.NewQuestionRepository(r.db)
+	return ir.NewQuestionRepository(r.db, r.conn)
 }
 
 func (r *registry) NewQuestionPresenter() up.QuestionPresenter {
