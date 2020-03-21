@@ -27,5 +27,6 @@ func (uc *questionController) GetQuestions(c Context) error {
 		return err
 	}
 
-	return c.JSON(http.StatusOK, u)
+	c.JSON(http.StatusOK, u)
+	return err
 }

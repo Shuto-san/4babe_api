@@ -3,15 +3,15 @@ package datastore
 import (
 	"log"
 
+	"github.com/Shuto-san/4babe_api/config"
 	"github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
-	"github.com/Shuto-san/4babe_api/config"
 )
 
 func NewDB() *gorm.DB {
 	DBMS := "mysql"
 	mySqlConfig := &mysql.Config{
-		Question:                 config.C.Database.Question,
+		User:                 config.C.Database.User,
 		Passwd:               config.C.Database.Password,
 		Net:                  config.C.Database.Net,
 		Addr:                 config.C.Database.Addr,

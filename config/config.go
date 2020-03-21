@@ -35,7 +35,7 @@ func ReadConfig() {
 
 	viper.SetConfigName("config")
 	viper.SetConfigType("yml")
-	viper.AddConfigPath(filepath.Join("$GOPATH", "github.com", "Shuto-san", "4babe_api", "config"))
+	viper.AddConfigPath(filepath.Join("config"))
 	viper.AutomaticEnv()
 
 	if err := viper.ReadInConfig(); err != nil {

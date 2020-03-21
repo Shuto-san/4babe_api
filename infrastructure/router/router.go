@@ -5,9 +5,9 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func NewRouter(g *gin.Engine, c controller.AppController) *gin.Context {
+func NewRouter(g *gin.Engine, c controller.AppController) *gin.Engine {
 
-	g.GET("/questions", func(context *gin.Context) error { return c.GetQuestions(context) })
+	g.GET("/questions", func(context *gin.Context) { c.GetQuestions(context) })
 
 	return g
 }

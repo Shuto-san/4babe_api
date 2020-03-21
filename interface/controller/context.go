@@ -1,5 +1,8 @@
 package controller
 
 type Context interface {
-	JSON(code int, i interface{}) error
+	Param(string) string
+	Bind(interface{}) error
+	Status(int)
+	JSON(int, interface{})
 }

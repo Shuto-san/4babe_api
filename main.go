@@ -26,7 +26,7 @@ func main() {
 	gin = router.NewRouter(gin, r.NewAppController())
 
 	fmt.Println("Server listen at http://localhost" + ":" + config.C.Server.Address)
-	if err := e.Start(":" + config.C.Server.Address); err != nil {
+	if err := gin.Run(":" + config.C.Server.Address); err != nil {
 		log.Fatalln(err)
 	}
 }
