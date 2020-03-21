@@ -12,7 +12,7 @@ type questionController struct {
 }
 
 type QuestionController interface {
-	Questions(c Context) error
+	GetQuestions(c Context) error
 }
 
 func NewQuestionController(us interactor.QuestionInteractor) QuestionController {

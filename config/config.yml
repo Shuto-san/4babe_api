@@ -1,9 +1,9 @@
 database:
-  question: root
-  password: root
+  user: root
+  password: babepass
   net: tcp
-  addr: 127.0.0.1:3307
-  dbname: golang-clean-architecture
+  addr: 127.0.0.1:3306
+  dbname: babe
   allowNativePasswords: true
   params:
     parseTime: "true"
