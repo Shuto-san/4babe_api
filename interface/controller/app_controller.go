@@ -1,5 +1,5 @@
 package controller
 
-type AppController interface {
-	QuestionController
+type AppController struct {
+	User interface{ QuestionController }
 }
