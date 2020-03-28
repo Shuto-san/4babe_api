@@ -1,8 +1,8 @@
 package registry
 
 import (
-	"github.com/jinzhu/gorm"
 	"github.com/Shuto-san/4babe_api/interface/controller"
+	"github.com/jinzhu/gorm"
 )
 
 type registry struct {
@@ -18,5 +18,7 @@ func NewRegistry(db *gorm.DB) Registry {
 }
 
 func (r *registry) NewAppController() controller.AppController {
-	return r.NewQuestionController()
+	return controller.AppController{
+		User: r.NewQuestionController(),
+	}
 }

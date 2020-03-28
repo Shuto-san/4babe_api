@@ -7,7 +7,7 @@ import (
 
 func NewRouter(g *gin.Engine, c controller.AppController) *gin.Engine {
 
-	g.GET("/questions", func(context *gin.Context) { c.GetQuestions(context) })
+	g.GET("/questions", func(context *gin.Context) { c.User.GetQuestions(context) })
 
 	return g
 }
